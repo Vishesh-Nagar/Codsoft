@@ -1,6 +1,6 @@
+#include "TodoList.h"
 #include <iostream>
 #include <string>
-#include "TodoList.h"
 
 using namespace std;
 
@@ -19,35 +19,35 @@ int main() {
         cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore(); // to ignore leftover newline character
+        cin.ignore();
 
         switch (choice) {
-            case 1:
-                cout << "Enter task description: ";
-                getline(cin, task);
-                todoList.addTask(task);
-                break;
-            case 2:
-                todoList.viewTasks();
-                break;
-            case 3:
-                cout << "Enter task index to mark as completed: ";
-                cin >> index;
-                cin.ignore();
-                todoList.markTaskAsCompleted(index - 1);
-                break;
-            case 4:
-                cout << "Enter task index to remove: ";
-                cin >> index;
-                cin.ignore();
-                todoList.removeTask(index - 1);
-                break;
-            case 5:
-                cout << "Exiting...\n";
-                break;
-            default:
-                cout << "Invalid choice. Please try again.\n";
-                break;
+        case 1:
+            cout << "Enter task description: ";
+            getline(cin, task);
+            todoList.addTask(task);
+            break;
+        case 2:
+            todoList.viewTasks();
+            break;
+        case 3:
+            cout << "Enter task index to mark as completed: ";
+            cin >> index;
+            cin.ignore();
+            todoList.markTaskAsCompleted(index - 1);
+            break;
+        case 4:
+            cout << "Enter task index to remove: ";
+            cin >> index;
+            cin.ignore();
+            todoList.removeTask(index - 1);
+            break;
+        case 5:
+            cout << "Exiting...\n";
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
         }
     } while (choice != 5);
 
